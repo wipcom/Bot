@@ -41,18 +41,6 @@ main.py
 ./ai_autotrading_bot/scripts/start_dashboard.sh
 ```
 
-- Windows (CMD):
-
-```bat
-ai_autotrading_bot\scripts\start_bot.bat
-```
-
-- Dashboard en Windows (CMD):
-
-```bat
-ai_autotrading_bot\scripts\start_dashboard.bat
-```
-
 ## Estado actual
 
 Sí, el proyecto **ya tiene portal web** (FastAPI + Streamlit) y también tiene **autotrading automático en modo paper** ejecutado desde `main.py` sin depender del dashboard.
@@ -67,11 +55,3 @@ Sí, el proyecto **ya tiene portal web** (FastAPI + Streamlit) y también tiene 
 6. Optimizador IA con Ollama real analizando logs históricos.
 7. Hardening operacional: retries, circuit breakers, alertas, supervisión de procesos.
 8. Pruebas unitarias/integración y despliegue (Docker + CI/CD).
-
-
-## Avances de esta iteración
-
-- Gestión de trades abiertos con break-even, trailing stop, cierre por SL/TP y cálculo de PnL.
-- Controles de riesgo operativos: límite de pérdida diaria y validación de drawdown antes de abrir nuevos trades.
-- Persistencia de cierre de trades en SQLite (`close_trade`) para reflejar estado/PnL real en dashboard/API.
-- Tests unitarios iniciales para `RiskEngine` y `TradeManager` (framework `unittest`).

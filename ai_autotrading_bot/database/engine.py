@@ -69,18 +69,6 @@ class DatabaseEngine:
                 ),
             )
 
-
-    def close_trade(self, order_id: str, pnl: float, status: str = "closed") -> None:
-        with self._connect() as conn:
-            conn.execute(
-                """
-                UPDATE trades
-                SET pnl = ?, status = ?
-                WHERE order_id = ?
-                """,
-                (pnl, status, order_id),
-            )
-
     def fetch_recent_trades(self, limit: int = 50) -> list[dict]:
         with self._connect() as conn:
             conn.row_factory = sqlite3.Row
